@@ -6,7 +6,7 @@ using Akka.Actor;
 
 namespace ChartApp.Actors
 {
-    public class ChartingActor : ReceiveActor
+    public class ChartingActor : TypedActor
     {
         #region Messages
 
@@ -44,14 +44,12 @@ namespace ChartApp.Actors
             _chart = chart;
             _seriesIndex = seriesIndex;
 
-            Receive<InitializeChart>(m => HandleInitialize(m));
-            Receive<AddSeries>(m => HandleAddSeries(m));
         }
 
 
         #region Individual Message Type Handlers
 
-        private void HandleInitialize(InitializeChart ic)
+        public void Handle(InitializeChart ic)
         {
             if (ic.InitialSeries != null)
             {
@@ -74,7 +72,7 @@ namespace ChartApp.Actors
             }
         }
 
-        private void HandleAddSeries(AddSeries series)
+        public void Handle(AddSeries series)
         {
             if (!string.IsNullOrEmpty(series.Series.Name) &&
             !_seriesIndex.ContainsKey(series.Series.Name))

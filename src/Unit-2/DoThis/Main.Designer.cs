@@ -32,7 +32,10 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.sysChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCPU = new System.Windows.Forms.Button();
+            this.btnMemory = new System.Windows.Forms.Button();
+            this.btnDisk = new System.Windows.Forms.Button();
+            this.btnPauseResume = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sysChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,22 +56,55 @@
             this.sysChart.TabIndex = 0;
             this.sysChart.Text = "sysChart";
             // 
-            // button1
+            // btnCPU
             // 
-            this.button1.Location = new System.Drawing.Point(574, 325);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Series";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCPU.Location = new System.Drawing.Point(582, 277);
+            this.btnCPU.Name = "btnCPU";
+            this.btnCPU.Size = new System.Drawing.Size(90, 23);
+            this.btnCPU.TabIndex = 1;
+            this.btnCPU.Text = "CPU (ON)";
+            this.btnCPU.UseVisualStyleBackColor = true;
+            this.btnCPU.Click += new System.EventHandler(this.btnCPU_Click);
+            // 
+            // btnMemory
+            // 
+            this.btnMemory.Location = new System.Drawing.Point(582, 321);
+            this.btnMemory.Name = "btnMemory";
+            this.btnMemory.Size = new System.Drawing.Size(90, 23);
+            this.btnMemory.TabIndex = 2;
+            this.btnMemory.Text = "Memory (OFF)";
+            this.btnMemory.UseVisualStyleBackColor = true;
+            this.btnMemory.Click += new System.EventHandler(this.btnMemory_Click);
+            // 
+            // btnDisk
+            // 
+            this.btnDisk.Location = new System.Drawing.Point(582, 361);
+            this.btnDisk.Name = "btnDisk";
+            this.btnDisk.Size = new System.Drawing.Size(90, 23);
+            this.btnDisk.TabIndex = 3;
+            this.btnDisk.Text = "DIsk (OFF)";
+            this.btnDisk.UseVisualStyleBackColor = true;
+            this.btnDisk.Click += new System.EventHandler(this.btnDisk_Click);
+            // 
+            // btnPauseResume
+            // 
+            this.btnPauseResume.Location = new System.Drawing.Point(582, 157);
+            this.btnPauseResume.Name = "btnPauseResume";
+            this.btnPauseResume.Size = new System.Drawing.Size(90, 23);
+            this.btnPauseResume.TabIndex = 4;
+            this.btnPauseResume.Text = "Puase ||";
+            this.btnPauseResume.UseVisualStyleBackColor = true;
+            this.btnPauseResume.Click += new System.EventHandler(this.btnPauseResume_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 446);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPauseResume);
+            this.Controls.Add(this.btnDisk);
+            this.Controls.Add(this.btnMemory);
+            this.Controls.Add(this.btnCPU);
             this.Controls.Add(this.sysChart);
             this.Name = "Main";
             this.Text = "System Metrics";
@@ -82,7 +118,10 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart sysChart;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCPU;
+        private System.Windows.Forms.Button btnMemory;
+        private System.Windows.Forms.Button btnDisk;
+        private System.Windows.Forms.Button btnPauseResume;
     }
 }
 
